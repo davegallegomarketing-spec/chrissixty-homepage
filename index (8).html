@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chris Sixty — Attraction Strategist | Personal Coaching</title>
+  <meta name="description" content="Get your own personal Attraction Strategy from Coach Chris Sixty. 20+ years helping men flip the dynamic and keep the woman they want.">
+  <meta property="og:title" content="Chris Sixty — Attraction Strategist">
+  <meta property="og:description" content="Get your own personal Attraction Strategy. Free strategy call with Coach Chris Sixty.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chrissixty.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       CHRIS SIXTY — COACHING HOMEPAGE
+       Design: Light, modern, smart coach aesthetic
+       ============================================ */
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #faf9f7;
+      --white: #ffffff;
+      --ink: #1a1a1a;
+      --ink2: #3a3a3a;
+      --muted: #6b6b6b;
+      --light: #a0a0a0;
+      --faint: #e8e6e2;
+      --accent: #b8432f;
+      --accent-hover: #d44f38;
+      --warm: #c9a87a;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'Outfit', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ---- ANIMATIONS ---- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.6s ease-out forwards;
+    }
+    .fade-up-d1 { animation-delay: 0.1s; }
+    .fade-up-d2 { animation-delay: 0.2s; }
+    .fade-up-d3 { animation-delay: 0.3s; }
+    .fade-up-d4 { animation-delay: 0.4s; }
+
+    /* ---- NAVIGATION ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      border-bottom: 1px solid var(--faint);
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.95);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo em { font-style: italic; color: var(--accent); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-right a {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-right a:hover { color: var(--ink); }
+    .nav-cta {
+      background: var(--ink) !important;
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      font-size: 12.5px !important;
+      letter-spacing: 0.3px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--ink2) !important;
+      transform: translateY(-1px);
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      padding: 64px 48px;
+      max-width: 1080px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(184,67,47,0.07);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 40px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: 44px;
+      line-height: 1.12;
+      font-weight: 400;
+      margin-bottom: 18px;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 em { font-style: italic; }
+    .hero-sub {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 28px;
+      max-width: 440px;
+      line-height: 1.65;
+    }
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(184,67,47,0.2);
+    }
+    .btn-ghost {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--ink); }
+
+    .hero-trust {
+      display: flex;
+      gap: 28px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--faint);
+    }
+    .trust-item {
+      font-size: 12px;
+      color: var(--light);
+      font-weight: 500;
+    }
+    .trust-item strong {
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 15px;
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    /* ---- VIDEO ---- */
+    .hero-video {
+      background: var(--white);
+      border: 1px solid var(--faint);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.04);
+    }
+    .hero-video .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .hero-video .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    /* Placeholder when no video embed yet */
+    .video-placeholder {
+      aspect-ratio: 16/9;
+      background: linear-gradient(145deg, #f0eeeb, #e8e6e2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .play-btn {
+      width: 60px;
+      height: 60px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(184,67,47,0.25);
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+    .play-btn:hover { transform: scale(1.08); }
+    .play-btn::after {
+      content: '';
+      width: 0; height: 0;
+      border-left: 20px solid var(--white);
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+    }
+    .video-placeholder span {
+      font-size: 11px;
+      color: var(--light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ---- SECTION SEPARATOR ---- */
+    .sep {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 0;
+    }
+    .sep-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--warm);
+      margin: 0 5px;
+      opacity: 0.45;
+    }
+
+    /* ---- WHO CHRIS HELPS ---- */
+    .spec-section {
+      padding: 56px 48px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .section-label {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--light);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: 34px;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+    }
+    .spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .spec-card {
+      background: var(--white);
+      border: 1px solid var(--faint);
+      border-radius: 10px;
+      padding: 28px;
+      transition: all 0.25s;
+    }
+    .spec-card:hover {
+      border-color: #d0cec8;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transform: translateY(-2px);
+    }
+    .spec-tag {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .spec-card h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .spec-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ---- CHRIS'S LETTER ---- */
+    .letter-section {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 48px;
+    }
+    .letter-salutation {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+    .letter-section p {
+      color: var(--ink2);
+      font-size: 15.5px;
+      margin-bottom: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    .letter-section p strong,
+    .letter-section p b {
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .letter-pullquote {
+      font-family: var(--serif);
+      font-size: 21px;
+      color: var(--ink);
+      line-height: 1.45;
+      border-left: 3px solid var(--accent);
+      padding: 6px 0 6px 22px;
+      margin: 32px 0;
+      font-style: italic;
+    }
+    .letter-stakes {
+      background: var(--white);
+      border: 1px solid var(--faint);
+      border-radius: 10px;
+      padding: 28px;
+      margin: 28px 0;
+    }
+    .letter-stakes p {
+      margin-bottom: 8px;
+      font-size: 14.5px;
+    }
+    .letter-stakes p:last-child { margin-bottom: 0; }
+
+    .letter-signoff {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--faint);
+    }
+    .signoff-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--faint);
+      flex-shrink: 0;
+    }
+    .signoff-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .signoff-name {
+      font-family: var(--serif);
+      font-size: 19px;
+    }
+    .signoff-title {
+      font-size: 11px;
+      color: var(--light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ---- LEAD CAPTURE FORM ---- */
+    .form-section {
+      padding: 56px 48px;
+      background: var(--white);
+      border-top: 1px solid var(--faint);
+      border-bottom: 1px solid var(--faint);
+    }
+    .form-wrap {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .form-wrap h2 {
+      font-family: var(--serif);
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+    .form-subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--faint);
+      color: var(--ink);
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: var(--sans);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(184,67,47,0.06);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .form-group select {
+      appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23999' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .form-submit {
+      display: block;
+      width: 100%;
+      background: var(--ink);
+      color: var(--white);
+      border: none;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 18px;
+      font-family: var(--sans);
+      transition: all 0.2s;
+      letter-spacing: 0.2px;
+    }
+    .form-submit:hover {
+      background: var(--ink2);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .form-note {
+      text-align: center;
+      font-size: 11px;
+      color: var(--light);
+      margin-top: 12px;
+    }
+
+    /* Form success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .form-success .check {
+      width: 56px;
+      height: 56px;
+      background: rgba(34,139,34,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 24px;
+    }
+    .form-success h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .form-success p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ---- CROSS-SELL ---- */
+    .cross-section {
+      padding: 48px 48px;
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .cross-card {
+      background: var(--white);
+      border: 1px solid var(--faint);
+      border-radius: 10px;
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .cross-card:hover {
+      border-color: #d0cec8;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    }
+    .cross-icon {
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 11px;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .cross-icon.book-icon {
+      background: rgba(184,67,47,0.06);
+      color: var(--accent);
+    }
+    .cross-icon.circle-icon {
+      background: rgba(201,168,122,0.12);
+      color: var(--warm);
+    }
+    .cross-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .cross-card p {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .cross-link {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: opacity 0.2s;
+    }
+    .cross-link:hover { opacity: 0.7; }
+
+    /* ---- FOOTER ---- */
+    footer {
+      padding: 36px 48px;
+      text-align: center;
+      background: var(--white);
+      border-top: 1px solid var(--faint);
+    }
+    footer p {
+      font-size: 11px;
+      color: var(--light);
+    }
+    .footer-links {
+      margin-top: 8px;
+    }
+    .footer-links a {
+      color: var(--light);
+      font-size: 11px;
+      margin: 0 10px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--muted); }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      .nav { padding: 14px 20px; }
+      .nav-right a:not(.nav-cta) { display: none; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        gap: 32px;
+      }
+      .hero h1 { font-size: 32px; }
+      .hero-sub { font-size: 15px; }
+      .hero-trust { gap: 16px; }
+
+      .spec-section { padding: 40px 20px; }
+      .spec-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 28px; }
+
+      .letter-section { padding: 40px 20px; }
+      .letter-salutation { font-size: 24px; }
+      .letter-pullquote { font-size: 18px; }
+
+      .form-section { padding: 40px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .cross-section {
+        padding: 32px 20px;
+        grid-template-columns: 1fr;
+      }
+
+      footer { padding: 28px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 28px; }
+      .hero-cta-row { flex-direction: column; align-items: flex-start; }
+      .hero-trust { flex-direction: column; gap: 12px; }
+      .trust-item { display: flex; gap: 6px; align-items: baseline; }
+      .trust-item strong { display: inline; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">Chris <em>Sixty</em></a>
+    <div class="nav-right">
+      <a href="#coaching">Coaching</a>
+      <a href="https://chrissixty.com/programs/" target="_blank">Programs</a>
+      <a href="#book">Book</a>
+      <a href="https://www.youtube.com/@chris-sixty" target="_blank">YouTube</a>
+      <a href="#form" class="nav-cta">Talk to Chris</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="coaching">
+    <div class="fade-up">
+      <div class="hero-badge">Attraction Strategist</div>
+      <h1>Get your own personal <em>"Attraction Strategy"</em></h1>
+      <p class="hero-sub">A custom coaching plan from the only coach who specializes in flipping the dynamic — so she chases you, and stays.</p>
+      <div class="hero-cta-row">
+        <a href="#form" class="btn-primary">Book a Free Strategy Call</a>
+        <a href="#letter" class="btn-ghost">Read Chris's letter ↓</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><strong>20+</strong>Years coaching</div>
+        <div class="trust-item"><strong>1,000s</strong>of clients worldwide</div>
+        <div class="trust-item"><strong>Free</strong>first strategy call</div>
+      </div>
+    </div>
+    <div class="hero-video fade-up fade-up-d2">
+      <!--
+        ========================================================
+        REPLACE THIS PLACEHOLDER WITH CHRIS'S VIDEO EMBED
+        ========================================================
+        Option A: YouTube embed
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+                  title="Chris Sixty — Coaching Introduction"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen></iframe>
+        </div>
+        
+        Option B: Wistia embed (current site uses this)
+        <div class="video-wrapper">
+          <iframe src="https://fast.wistia.net/embed/iframe/VIDEO_ID" 
+                  title="Chris Sixty — Coaching Introduction"
+                  allow="autoplay; fullscreen" 
+                  allowfullscreen></iframe>
+        </div>
+        ========================================================
+      -->
+      <div class="video-placeholder">
+        <div class="play-btn"></div>
+        <span>Chris's intro video</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"><div class="sep-dot"></div><div class="sep-dot"></div><div class="sep-dot"></div></div>
+
+  <!-- ============ WHO CHRIS HELPS ============ -->
+  <section class="spec-section">
+    <div class="section-label">Who Chris helps</div>
+    <h2 class="section-title">Sound like your situation?</h2>
+    <div class="spec-grid">
+      <div class="spec-card fade-up">
+        <div class="spec-tag">She's pulling away</div>
+        <h3>You had a connection — but she's going cold</h3>
+        <p>Everything seemed great, but somewhere along the line her interest dropped. Chris shows you exactly what went wrong and how to get her back — before it's too late.</p>
+      </div>
+      <div class="spec-card fade-up fade-up-d1">
+        <div class="spec-tag">Blindsided by breakup</div>
+        <h3>She left — and you didn't see it coming</h3>
+        <p>You got her to fall for you, but couldn't keep her. Chris teaches you exactly what to do and say — even if she's already seeing someone new.</p>
+      </div>
+      <div class="spec-card fade-up fade-up-d2">
+        <div class="spec-tag">The same pattern</div>
+        <h3>Different woman, same ending — every time</h3>
+        <p>Every relationship ends the same way. Chris breaks the cycle by showing you the dynamic you keep creating — and how to flip it for good.</p>
+      </div>
+      <div class="spec-card fade-up fade-up-d3">
+        <div class="spec-tag">Ready to level up</div>
+        <h3>You want to get it right the next time</h3>
+        <p>You're single, you've done the reflecting, and now you want to understand how attraction actually works. Smart move.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"><div class="sep-dot"></div><div class="sep-dot"></div><div class="sep-dot"></div></div>
+
+  <!-- ============ CHRIS'S LETTER ============ -->
+  <section class="letter-section" id="letter">
+    <div class="letter-salutation">"Dear Friend —"</div>
+
+    <p>I think in all fairness, I think I should tell you exactly what it is that I do.</p>
+
+    <p>Let me be crystal clear — so there's no confusion.</p>
+
+    <p>You don't need me to get a date. You don't need me to get a girlfriend. Heck, you could even get married to a pretty amazing woman without my help.</p>
+
+    <p><b>But here's the truth: It won't last.</b></p>
+
+    <p>Because the way you "got her" was wrong from the start. The dynamic was off. The roles were never reversed. She was still the prize — and you were the chaser.</p>
+
+    <p>You were living in a #2 relationship where you had the #1 feeling for her, but she only had the #2 feeling for you.</p>
+
+    <p>And that's not good enough.</p>
+
+    <p><b>That's why you need me.</b></p>
+
+    <div class="letter-pullquote">
+      Because no one on this planet is better at helping a man get the woman he's crazy about — and flipping the dynamic so she feels like he's the prize. That's the world's greatest magic trick.
+    </div>
+
+    <p>The ultimate win-win. She gets a man she truly wants to chase. You get to keep the woman you thought was out of your league — and now she sees you as the one to win.</p>
+
+    <p>Sound easy? It's not.</p>
+
+    <p>Not on a normal day. And it's 100x harder when you're head over heels for her. That's why trying to pull this off without coaching is almost impossible.</p>
+
+    <p>I love this job. I love my clients. But I'll be honest — sometimes I get frustrated.</p>
+
+    <p>Because <b>men suffer in silence.</b> They don't talk. They don't ask for help. They just bury the pain and disappear.</p>
+
+    <p>They write me messages like: <em>"Chris, I think I'm losing the love of my life."</em></p>
+
+    <p>They've been dating her for two years. She's pulling away. They know something's wrong… And still — they won't book a coaching session. They'll just drift off into the abyss. And I never hear from them again.</p>
+
+    <p>But we both know what happened. She dumped him. He's heartbroken. Angry. Bitter. And he has no idea how to fix it.</p>
+
+    <p>Worse? <b>He'll repeat the exact same pattern with the next woman.</b> Because he never took the time to learn what went wrong.</p>
+
+    <div class="letter-stakes">
+      <p><b>The stakes? They only get higher.</b> If you're in college and your girlfriend dumps you because you weren't a challenge, it hurts — but it's not life-altering. But what if you don't fix it? What happens when you're married?</p>
+      <p>Divorce.<br>Family court.<br>You're not living with your kids anymore.<br>Some guy named Bruce is now parked in your old driveway — with your ex-wife in his Cybertruck.</p>
+      <p>Oh, and he's sleeping with the woman you still love. The one you would still take back if she'd let you.</p>
+      <p>That's not just pain. That's the kind of pain that leads to real mental health issues. And let's be honest — there's a mental health crisis among men right now.</p>
+      <p>But it's not because guys are wearing skinny jeans or not chopping wood. It's because they are failing at relationships. <b>Badly.</b></p>
+    </div>
+
+    <p>For years, I've racked my brain trying to figure this out. Why won't guys get coaching when their relationships are crumbling?<br>Is it ego?<br>Shame?<br>Cheapness?</p>
+
+    <p>Maybe. But I think the bigger issue is this: Most men have never been taught that learning about women is something worth investing in.</p>
+
+    <p>They'll spend hundreds on dates. Thousands on engagement rings and lavish vacations. <b>But they won't spend a fraction of that to actually understand how attraction works. To learn how to keep a woman.</b></p>
+
+    <p>And that's the part I don't feel bad about. If you're losing the love of your life — and you were offered a lifeline — and you chose not to take it? That's on you.</p>
+
+    <p>Because you didn't value her.<br>You didn't value yourself.<br>And you definitely don't value what I do.</p>
+
+    <p>We all make choices. <b>And we all reveal what we care about by how much we're willing to invest.</b></p>
+
+    <p>So if you're crying into your beer about the girl who's slipping away, But you're "not ready" to do coaching?</p>
+
+    <p>That's not a tragedy. That's a choice.</p>
+
+    <p>If you're ready to break the pattern, build your confidence, and become a Positive Challenge who actually keeps the woman you want…</p>
+
+    <p><b>Then let's talk.</b></p>
+
+    <p>Book your free strategy call now. No pressure. Just a real conversation about where you are, what's not working, and how to flip the dynamic — for good.</p>
+
+    <p>This isn't therapy.<br>This isn't guesswork.<br>This is the most important investment you'll ever make in your life</p>
+
+    <p>Because once you discover the truth, you'll never go back.</p>
+
+    <div class="letter-signoff">
+      <div class="signoff-img">
+        <img src="https://i0.wp.com/chrissixty.com/wp-content/uploads/2023/04/chris-sixty-image-TSB.png?resize=300%2C300&ssl=1" alt="Chris Sixty">
+      </div>
+      <div>
+        <div class="signoff-name">Coach Chris Sixty</div>
+        <div class="signoff-title">Attraction Strategist · 20+ Years</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"><div class="sep-dot"></div><div class="sep-dot"></div><div class="sep-dot"></div></div>
+
+  <!-- ============ LEAD CAPTURE FORM ============ -->
+  <section class="form-section" id="form">
+    <div class="form-wrap">
+      <h2>Tell Chris your situation</h2>
+      <p class="form-subtitle">He reads every submission personally — then reaches out to schedule your free strategy call.</p>
+
+      <form id="lead-form" action="#" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="First name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="situation">Your situation</label>
+            <select id="situation" name="situation" required>
+              <option value="" disabled selected>Select...</option>
+              <option value="pulling-away">She's pulling away</option>
+              <option value="breakup">She just broke up with me</option>
+              <option value="ex-back">I want my ex back</option>
+              <option value="pattern">Same pattern every time</option>
+              <option value="marriage">Marriage in trouble</option>
+              <option value="level-up">Prepping for next relationship</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="duration">How long?</label>
+            <select id="duration" name="duration" required>
+              <option value="" disabled selected>Select...</option>
+              <option value="<1mo">Less than a month</option>
+              <option value="1-3mo">1–3 months</option>
+              <option value="3-6mo">3–6 months</option>
+              <option value="6-12mo">6–12 months</option>
+              <option value=">1yr">Over a year</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="details">What's happening?</label>
+          <textarea id="details" name="details" placeholder="Be specific — what's going on? What have you tried? The more detail, the better Chris can help." required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Submit — Get Your Free Strategy Call</button>
+        <p class="form-note">100% confidential. No spam. Chris personally reviews every submission.</p>
+      </form>
+
+      <div class="form-success" id="form-success">
+        <div class="check">✓</div>
+        <h3>Got it — Chris will be in touch</h3>
+        <p>He'll review your situation and reach out to schedule your free strategy call. Check your email.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CROSS-SELLS ============ -->
+  <section class="cross-section" id="book">
+    <div class="cross-card">
+      <div class="cross-icon book-icon">Book</div>
+      <div>
+        <h4>"You Never Had Her"</h4>
+        <p>300+ pages — the #1 and #2 dynamics, the 4 Switches, real stories, and word-for-word examples.</p>
+        <a href="#" class="cross-link">Get it on Amazon →</a>
+        <!-- TODO: Replace # with actual Amazon link -->
+      </div>
+    </div>
+    <div class="cross-card">
+      <div class="cross-icon circle-icon">Circle</div>
+      <div>
+        <h4>The Dynamic Ones</h4>
+        <p>Chris's private coaching community — AI tools, live support, and a brotherhood of men doing the work.</p>
+        <a href="https://the-ones.circle.so" class="cross-link" target="_blank">Join the Circle →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p>&copy; 2026 Chris Sixty Coaching. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@chris-sixty" target="_blank">YouTube</a>
+      <a href="https://chrissixty.com/programs/" target="_blank">Programs</a>
+      <a href="https://the-ones.circle.so" target="_blank">Community</a>
+      <a href="https://chrissixty.com/contact-chris-here/" target="_blank">Contact</a>
+      <a href="#">Privacy</a>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // Scroll-triggered fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+
+    // Form submission handler
+    // TODO: Replace with actual form backend (Netlify Forms, Google Forms, or custom API)
+    document.getElementById('lead-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Collect form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+      console.log('Lead captured:', data);
+
+      // Show success state
+      this.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+
+      // TODO: Send data to backend
+      // fetch('/api/lead', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(data)
+      // });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
