@@ -510,7 +510,152 @@
       margin-top: 2px;
     }
 
-    /* ---- LEAD CAPTURE FORM ---- */
+    /* ---- INLINE EMAIL CAPTURE CTAs ---- */
+    .inline-capture {
+      display: flex;
+      gap: 8px;
+      max-width: 420px;
+      margin: 20px 0;
+    }
+    .inline-capture input {
+      flex: 1;
+      background: var(--white);
+      border: 1px solid var(--faint);
+      color: var(--ink);
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: var(--sans);
+      transition: border-color 0.2s;
+      min-width: 0;
+    }
+    .inline-capture input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(184,67,47,0.06);
+    }
+    .inline-capture button {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: var(--sans);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .inline-capture button:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Centered version for mid-letter */
+    .inline-capture.centered {
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    /* ---- STEP 2 OVERLAY ---- */
+    .step2-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      animation: overlayIn 0.25s ease;
+    }
+    .step2-overlay.active {
+      display: flex;
+    }
+    @keyframes overlayIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .step2-modal {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 40px;
+      max-width: 520px;
+      width: 100%;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: modalIn 0.3s ease;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    .step2-modal .close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: var(--bg);
+      color: var(--muted);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      font-family: var(--sans);
+    }
+    .step2-modal .close-btn:hover { background: var(--faint); }
+    .step2-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .step2-header .check-circle {
+      width: 48px;
+      height: 48px;
+      background: rgba(34,139,34,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      font-size: 20px;
+      color: #228B22;
+    }
+    .step2-header h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+    .step2-header p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .step2-email-show {
+      background: var(--bg);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .step2-email-show strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ---- BOTTOM FORM — now simpler, email-first ---- */
     .form-section {
       padding: 56px 48px;
       background: var(--white);
@@ -518,25 +663,73 @@
       border-bottom: 1px solid var(--faint);
     }
     .form-wrap {
-      max-width: 520px;
+      max-width: 480px;
       margin: 0 auto;
+      text-align: center;
     }
     .form-wrap h2 {
       font-family: var(--serif);
       font-size: 30px;
-      text-align: center;
       margin-bottom: 6px;
       font-weight: 400;
     }
     .form-subtitle {
-      text-align: center;
       color: var(--muted);
       font-size: 14px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       line-height: 1.5;
     }
+    .form-email-row {
+      display: flex;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .form-email-row input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--faint);
+      color: var(--ink);
+      padding: 14px 16px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-family: var(--sans);
+      transition: border-color 0.2s;
+      min-width: 0;
+    }
+    .form-email-row input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(184,67,47,0.06);
+    }
+    .form-email-row button {
+      background: var(--ink);
+      color: var(--white);
+      border: none;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--sans);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .form-email-row button:hover {
+      background: var(--ink2);
+      transform: translateY(-1px);
+    }
+    .form-note {
+      text-align: center;
+      font-size: 11px;
+      color: var(--light);
+      margin-top: 12px;
+    }
+
+    /* Hide old full form styles — keeping for step2 modal */
     .form-group {
       margin-bottom: 14px;
+      text-align: left;
     }
     .form-group label {
       display: block;
@@ -605,12 +798,6 @@
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .form-note {
-      text-align: center;
-      font-size: 11px;
-      color: var(--light);
-      margin-top: 12px;
-    }
 
     /* Form success state */
     .form-success {
@@ -637,6 +824,15 @@
     .form-success p {
       color: var(--muted);
       font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .inline-capture { flex-direction: column; }
+      .inline-capture button { width: 100%; }
+      .form-email-row { flex-direction: column; }
+      .form-email-row button { width: 100%; }
+      .step2-modal { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
     }
 
     /* ---- CROSS-SELL ---- */
@@ -761,7 +957,6 @@
 
     @media (max-width: 480px) {
       .hero h1 { font-size: 28px; }
-      .hero-cta-row { flex-direction: column; align-items: flex-start; }
       .hero-trust { flex-direction: column; gap: 12px; }
       .trust-item { display: flex; gap: 6px; align-items: baseline; }
       .trust-item strong { display: inline; }
@@ -788,10 +983,11 @@
       <div class="hero-badge">Attraction Strategist</div>
       <h1>Get your own personal <em>"Attraction Strategy"</em></h1>
       <p class="hero-sub">A custom coaching plan from the only coach who specializes in flipping the dynamic — so she chases you, and stays.</p>
-      <div class="hero-cta-row">
-        <a href="#form" class="btn-primary">Book a Free Strategy Call</a>
-        <a href="#letter" class="btn-ghost">Read Chris's letter ↓</a>
+      <div class="inline-capture" data-capture="hero">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="button" onclick="captureEmail(this)">Free Strategy Call</button>
       </div>
+      <p style="font-size:11px;color:var(--light);margin-top:-12px">No spam. Chris will personally reach out to you.</p>
       <div class="hero-trust">
         <div class="trust-item"><strong>20+</strong>Years coaching</div>
         <div class="trust-item"><strong>1,000s</strong>of clients worldwide</div>
@@ -800,29 +996,13 @@
     </div>
     <div class="hero-video fade-up fade-up-d2">
       <!--
-        ========================================================
-        REPLACE THIS PLACEHOLDER WITH CHRIS'S VIDEO EMBED
-        ========================================================
-        Option A: YouTube embed
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
-                  title="Chris Sixty — Coaching Introduction"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen></iframe>
-        </div>
-        
-        Option B: Wistia embed (current site uses this)
-        <div class="video-wrapper">
-          <iframe src="https://fast.wistia.net/embed/iframe/VIDEO_ID" 
-                  title="Chris Sixty — Coaching Introduction"
-                  allow="autoplay; fullscreen" 
-                  allowfullscreen></iframe>
-        </div>
-        ========================================================
+        Chris's intro video — Vimeo embed
       -->
-      <div class="video-placeholder">
-        <div class="play-btn"></div>
-        <span>Chris's intro video</span>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+        <iframe src="https://player.vimeo.com/video/1090903533" 
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                allow="autoplay; fullscreen; picture-in-picture" 
+                allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -886,10 +1066,13 @@
 
     <p>The ultimate win-win. She gets a man she truly wants to chase. You get to keep the woman you thought was out of your league — and now she sees you as the one to win.</p>
 
-    <!-- MID-LETTER CTA — catches people who don't want to read more -->
+    <!-- MID-LETTER CTA — email capture for people who are already sold -->
     <div class="letter-mid-cta">
-      <p>Ready to talk? Skip ahead.</p>
-      <a href="#form">Book Your Free Strategy Call</a>
+      <p>Ready to talk? Enter your email and Chris will reach out.</p>
+      <div class="inline-capture centered" data-capture="mid-letter">
+        <input type="email" placeholder="Your email" required>
+        <button type="button" onclick="captureEmail(this)">Get Started</button>
+      </div>
     </div>
 
     <!-- EXPAND TOGGLE -->
@@ -979,33 +1162,49 @@
 
   <div class="sep"><div class="sep-dot"></div><div class="sep-dot"></div><div class="sep-dot"></div></div>
 
-  <!-- ============ LEAD CAPTURE FORM ============ -->
+  <!-- ============ BOTTOM EMAIL CAPTURE ============ -->
   <section class="form-section" id="form">
     <div class="form-wrap">
-      <h2>Tell Chris your situation</h2>
-      <p class="form-subtitle">He reads every submission personally — then reaches out to schedule your free strategy call.</p>
+      <h2>Talk to Chris</h2>
+      <p class="form-subtitle">Enter your email and Chris will personally reach out to schedule your free strategy call.</p>
+      <div class="form-email-row" data-capture="bottom">
+        <input type="email" placeholder="you@email.com" required>
+        <button type="button" onclick="captureEmail(this)">Get My Free Call</button>
+      </div>
+      <p class="form-note">100% confidential. No spam. Chris reads every submission.</p>
+    </div>
+  </section>
 
-      <form id="lead-form" action="#" method="POST">
+  <!-- ============ STEP 2 OVERLAY — details form ============ -->
+  <div class="step2-overlay" id="step2-overlay">
+    <div class="step2-modal">
+      <button class="close-btn" onclick="closeStep2()">&times;</button>
+      
+      <div class="step2-header">
+        <div class="check-circle">&#10003;</div>
+        <h3>Great — Chris will be in touch</h3>
+        <p>Help him prep for your call. The more detail you share, the better he can help.</p>
+      </div>
+
+      <div class="step2-email-show">
+        Sending to: <strong id="step2-email-display">you@email.com</strong>
+      </div>
+
+      <form id="step2-form" onsubmit="submitStep2(event)">
         <div class="form-row">
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="First name" required>
+            <label>Name</label>
+            <input type="text" name="name" placeholder="First name">
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@email.com" required>
+            <label>Phone <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+            <input type="tel" name="phone" placeholder="+1 (555) 000-0000">
           </div>
         </div>
-
-        <div class="form-group">
-          <label for="phone">Phone <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
-          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
-        </div>
-
         <div class="form-row">
           <div class="form-group">
-            <label for="situation">Your situation</label>
-            <select id="situation" name="situation" required>
+            <label>Your situation</label>
+            <select name="situation">
               <option value="" disabled selected>Select...</option>
               <option value="pulling-away">She's pulling away</option>
               <option value="breakup">She just broke up with me</option>
@@ -1017,8 +1216,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="duration">How long?</label>
-            <select id="duration" name="duration" required>
+            <label>How long?</label>
+            <select name="duration">
               <option value="" disabled selected>Select...</option>
               <option value="<1mo">Less than a month</option>
               <option value="1-3mo">1–3 months</option>
@@ -1028,23 +1227,22 @@
             </select>
           </div>
         </div>
-
         <div class="form-group">
-          <label for="details">What's happening?</label>
-          <textarea id="details" name="details" placeholder="Be specific — what's going on? What have you tried? The more detail, the better Chris can help." required></textarea>
+          <label>What's happening?</label>
+          <textarea name="details" placeholder="Be specific — what's going on? What have you tried? The more detail, the better Chris can help."></textarea>
         </div>
-
-        <button type="submit" class="form-submit">Submit — Get Your Free Strategy Call</button>
-        <p class="form-note">100% confidential. No spam. Chris personally reviews every submission.</p>
+        <button type="submit" class="form-submit">Submit Details</button>
+        <p class="form-note" style="margin-top:8px"><a href="#" onclick="closeStep2();return false;" style="color:var(--muted);text-decoration:underline">Skip — just send my email to Chris</a></p>
       </form>
 
-      <div class="form-success" id="form-success">
-        <div class="check">✓</div>
-        <h3>Got it — Chris will be in touch</h3>
-        <p>He'll review your situation and reach out to schedule your free strategy call. Check your email.</p>
+      <!-- Success state inside modal -->
+      <div class="form-success" id="step2-success">
+        <div class="check">&#10003;</div>
+        <h3>All set — Chris will reach out</h3>
+        <p>He'll review your situation and schedule your free strategy call. Check your inbox.</p>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ============ CROSS-SELLS ============ -->
   <section class="cross-section" id="book">
@@ -1081,6 +1279,75 @@
 
   <!-- ============ SCRIPTS ============ -->
   <script>
+    // Store captured email
+    let capturedEmail = '';
+
+    // STEP 1: Capture email from any inline form
+    function captureEmail(btn) {
+      const wrapper = btn.closest('[data-capture]');
+      const input = wrapper.querySelector('input[type="email"]');
+      const email = input.value.trim();
+      
+      if (!email || !email.includes('@')) {
+        input.style.borderColor = 'var(--accent)';
+        input.focus();
+        return;
+      }
+
+      capturedEmail = email;
+      console.log('Step 1 — Email captured:', email, 'from:', wrapper.dataset.capture);
+
+      // TODO: Send email to backend immediately (don't wait for step 2)
+      // fetch('/api/lead', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email, source: wrapper.dataset.capture })
+      // });
+
+      // Show step 2 overlay
+      document.getElementById('step2-email-display').textContent = email;
+      document.getElementById('step2-overlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // STEP 2: Submit full details (optional — email already captured)
+    function submitStep2(e) {
+      e.preventDefault();
+      const form = document.getElementById('step2-form');
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      data.email = capturedEmail;
+      
+      console.log('Step 2 — Full details:', data);
+
+      // TODO: Send full details to backend
+      // fetch('/api/lead-details', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(data)
+      // });
+
+      // Show success
+      form.style.display = 'none';
+      document.getElementById('step2-success').style.display = 'block';
+    }
+
+    // Close step 2 overlay
+    function closeStep2() {
+      document.getElementById('step2-overlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close overlay on background click
+    document.getElementById('step2-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closeStep2();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeStep2();
+    });
+
     // Letter expand/collapse toggle
     function toggleLetter() {
       const rest = document.getElementById('letter-rest');
@@ -1109,28 +1376,6 @@
       observer.observe(el);
     });
 
-    // Form submission handler
-    // TODO: Replace with actual form backend (Netlify Forms, Google Forms, or custom API)
-    document.getElementById('lead-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Collect form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData.entries());
-      console.log('Lead captured:', data);
-
-      // Show success state
-      this.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-
-      // TODO: Send data to backend
-      // fetch('/api/lead', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(data)
-      // });
-    });
-
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -1138,6 +1383,17 @@
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Allow Enter key to submit inline captures
+    document.querySelectorAll('.inline-capture input, .form-email-row input').forEach(input => {
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          const btn = this.closest('[data-capture]').querySelector('button');
+          if (btn) btn.click();
         }
       });
     });
