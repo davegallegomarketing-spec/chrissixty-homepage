@@ -382,6 +382,101 @@
     }
     .letter-stakes p:last-child { margin-bottom: 0; }
 
+    /* Letter visual breaks between chunks */
+    .letter-break {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+    }
+    .letter-break .lb-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--faint);
+      margin: 0 4px;
+    }
+
+    /* Mid-letter CTA */
+    .letter-mid-cta {
+      text-align: center;
+      padding: 28px 0;
+      margin: 12px 0;
+      border-top: 1px solid var(--faint);
+      border-bottom: 1px solid var(--faint);
+    }
+    .letter-mid-cta p {
+      font-size: 13px !important;
+      color: var(--light) !important;
+      margin-bottom: 12px !important;
+      font-weight: 400 !important;
+    }
+    .letter-mid-cta a {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .letter-mid-cta a:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Expand/collapse for the rest of the letter */
+    .letter-expand-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 0 8px;
+      cursor: pointer;
+      user-select: none;
+      transition: opacity 0.2s;
+    }
+    .letter-expand-toggle:hover { opacity: 0.7; }
+    .letter-expand-toggle span {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .letter-expand-toggle .chevron {
+      width: 10px;
+      height: 10px;
+      border-right: 1.5px solid var(--muted);
+      border-bottom: 1.5px solid var(--muted);
+      transform: rotate(45deg);
+      transition: transform 0.3s;
+    }
+    .letter-expand-toggle.open .chevron {
+      transform: rotate(-135deg);
+    }
+    .letter-rest {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+    .letter-rest.open {
+      max-height: 3000px;
+    }
+
+    /* Key line highlight */
+    .letter-key-line {
+      background: rgba(184,67,47,0.04);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .letter-key-line p {
+      margin-bottom: 0 !important;
+      font-weight: 400 !important;
+      color: var(--ink) !important;
+      font-size: 15px !important;
+    }
+
     .letter-signoff {
       display: flex;
       align-items: center;
@@ -768,6 +863,7 @@
   <section class="letter-section" id="letter">
     <div class="letter-salutation">"Dear Friend —"</div>
 
+    <!-- CHUNK 1: The Hook — this is what everyone reads -->
     <p>I think in all fairness, I think I should tell you exactly what it is that I do.</p>
 
     <p>Let me be crystal clear — so there's no confusion.</p>
@@ -790,55 +886,85 @@
 
     <p>The ultimate win-win. She gets a man she truly wants to chase. You get to keep the woman you thought was out of your league — and now she sees you as the one to win.</p>
 
-    <p>Sound easy? It's not.</p>
-
-    <p>Not on a normal day. And it's 100x harder when you're head over heels for her. That's why trying to pull this off without coaching is almost impossible.</p>
-
-    <p>I love this job. I love my clients. But I'll be honest — sometimes I get frustrated.</p>
-
-    <p>Because <b>men suffer in silence.</b> They don't talk. They don't ask for help. They just bury the pain and disappear.</p>
-
-    <p>They write me messages like: <em>"Chris, I think I'm losing the love of my life."</em></p>
-
-    <p>They've been dating her for two years. She's pulling away. They know something's wrong… And still — they won't book a coaching session. They'll just drift off into the abyss. And I never hear from them again.</p>
-
-    <p>But we both know what happened. She dumped him. He's heartbroken. Angry. Bitter. And he has no idea how to fix it.</p>
-
-    <p>Worse? <b>He'll repeat the exact same pattern with the next woman.</b> Because he never took the time to learn what went wrong.</p>
-
-    <div class="letter-stakes">
-      <p><b>The stakes? They only get higher.</b> If you're in college and your girlfriend dumps you because you weren't a challenge, it hurts — but it's not life-altering. But what if you don't fix it? What happens when you're married?</p>
-      <p>Divorce.<br>Family court.<br>You're not living with your kids anymore.<br>Some guy named Bruce is now parked in your old driveway — with your ex-wife in his Cybertruck.</p>
-      <p>Oh, and he's sleeping with the woman you still love. The one you would still take back if she'd let you.</p>
-      <p>That's not just pain. That's the kind of pain that leads to real mental health issues. And let's be honest — there's a mental health crisis among men right now.</p>
-      <p>But it's not because guys are wearing skinny jeans or not chopping wood. It's because they are failing at relationships. <b>Badly.</b></p>
+    <!-- MID-LETTER CTA — catches people who don't want to read more -->
+    <div class="letter-mid-cta">
+      <p>Ready to talk? Skip ahead.</p>
+      <a href="#form">Book Your Free Strategy Call</a>
     </div>
 
-    <p>For years, I've racked my brain trying to figure this out. Why won't guys get coaching when their relationships are crumbling?<br>Is it ego?<br>Shame?<br>Cheapness?</p>
+    <!-- EXPAND TOGGLE -->
+    <div class="letter-expand-toggle" id="expand-toggle" onclick="toggleLetter()">
+      <span>Keep reading Chris's letter</span>
+      <div class="chevron"></div>
+    </div>
 
-    <p>Maybe. But I think the bigger issue is this: Most men have never been taught that learning about women is something worth investing in.</p>
+    <!-- CHUNK 2: The Rest — collapsible -->
+    <div class="letter-rest" id="letter-rest">
 
-    <p>They'll spend hundreds on dates. Thousands on engagement rings and lavish vacations. <b>But they won't spend a fraction of that to actually understand how attraction works. To learn how to keep a woman.</b></p>
+      <div class="letter-break"><div class="lb-dot"></div><div class="lb-dot"></div><div class="lb-dot"></div></div>
 
-    <p>And that's the part I don't feel bad about. If you're losing the love of your life — and you were offered a lifeline — and you chose not to take it? That's on you.</p>
+      <p>Sound easy? It's not.</p>
 
-    <p>Because you didn't value her.<br>You didn't value yourself.<br>And you definitely don't value what I do.</p>
+      <p>Not on a normal day. And it's 100x harder when you're head over heels for her. That's why trying to pull this off without coaching is almost impossible.</p>
 
-    <p>We all make choices. <b>And we all reveal what we care about by how much we're willing to invest.</b></p>
+      <p>I love this job. I love my clients. But I'll be honest — sometimes I get frustrated.</p>
 
-    <p>So if you're crying into your beer about the girl who's slipping away, But you're "not ready" to do coaching?</p>
+      <p>Because <b>men suffer in silence.</b> They don't talk. They don't ask for help. They just bury the pain and disappear.</p>
 
-    <p>That's not a tragedy. That's a choice.</p>
+      <div class="letter-key-line">
+        <p>They write me messages like: <em>"Chris, I think I'm losing the love of my life."</em></p>
+      </div>
 
-    <p>If you're ready to break the pattern, build your confidence, and become a Positive Challenge who actually keeps the woman you want…</p>
+      <p>They've been dating her for two years. She's pulling away. They know something's wrong… And still — they won't book a coaching session. They'll just drift off into the abyss. And I never hear from them again.</p>
 
-    <p><b>Then let's talk.</b></p>
+      <p>But we both know what happened. She dumped him. He's heartbroken. Angry. Bitter. And he has no idea how to fix it.</p>
 
-    <p>Book your free strategy call now. No pressure. Just a real conversation about where you are, what's not working, and how to flip the dynamic — for good.</p>
+      <p>Worse? <b>He'll repeat the exact same pattern with the next woman.</b> Because he never took the time to learn what went wrong.</p>
 
-    <p>This isn't therapy.<br>This isn't guesswork.<br>This is the most important investment you'll ever make in your life</p>
+      <div class="letter-break"><div class="lb-dot"></div><div class="lb-dot"></div><div class="lb-dot"></div></div>
 
-    <p>Because once you discover the truth, you'll never go back.</p>
+      <div class="letter-stakes">
+        <p><b>The stakes? They only get higher.</b> If you're in college and your girlfriend dumps you because you weren't a challenge, it hurts — but it's not life-altering. But what if you don't fix it? What happens when you're married?</p>
+        <p>Divorce.<br>Family court.<br>You're not living with your kids anymore.<br>Some guy named Bruce is now parked in your old driveway — with your ex-wife in his Cybertruck.</p>
+        <p>Oh, and he's sleeping with the woman you still love. The one you would still take back if she'd let you.</p>
+        <p>That's not just pain. That's the kind of pain that leads to real mental health issues. And let's be honest — there's a mental health crisis among men right now.</p>
+        <p>But it's not because guys are wearing skinny jeans or not chopping wood. It's because they are failing at relationships. <b>Badly.</b></p>
+      </div>
+
+      <div class="letter-break"><div class="lb-dot"></div><div class="lb-dot"></div><div class="lb-dot"></div></div>
+
+      <p>For years, I've racked my brain trying to figure this out. Why won't guys get coaching when their relationships are crumbling?<br>Is it ego?<br>Shame?<br>Cheapness?</p>
+
+      <p>Maybe. But I think the bigger issue is this: Most men have never been taught that learning about women is something worth investing in.</p>
+
+      <div class="letter-key-line">
+        <p>They'll spend hundreds on dates. Thousands on engagement rings and lavish vacations. <b>But they won't spend a fraction of that to actually understand how attraction works. To learn how to keep a woman.</b></p>
+      </div>
+
+      <p>And that's the part I don't feel bad about. If you're losing the love of your life — and you were offered a lifeline — and you chose not to take it? That's on you.</p>
+
+      <p>Because you didn't value her.<br>You didn't value yourself.<br>And you definitely don't value what I do.</p>
+
+      <div class="letter-key-line">
+        <p>We all make choices. <b>And we all reveal what we care about by how much we're willing to invest.</b></p>
+      </div>
+
+      <p>So if you're crying into your beer about the girl who's slipping away, But you're "not ready" to do coaching?</p>
+
+      <p>That's not a tragedy. That's a choice.</p>
+
+      <div class="letter-break"><div class="lb-dot"></div><div class="lb-dot"></div><div class="lb-dot"></div></div>
+
+      <p>If you're ready to break the pattern, build your confidence, and become a Positive Challenge who actually keeps the woman you want…</p>
+
+      <p><b>Then let's talk.</b></p>
+
+      <p>Book your free strategy call now. No pressure. Just a real conversation about where you are, what's not working, and how to flip the dynamic — for good.</p>
+
+      <p>This isn't therapy.<br>This isn't guesswork.<br>This is the most important investment you'll ever make in your life</p>
+
+      <p>Because once you discover the truth, you'll never go back.</p>
+    </div>
 
     <div class="letter-signoff">
       <div class="signoff-img">
@@ -955,6 +1081,19 @@
 
   <!-- ============ SCRIPTS ============ -->
   <script>
+    // Letter expand/collapse toggle
+    function toggleLetter() {
+      const rest = document.getElementById('letter-rest');
+      const toggle = document.getElementById('expand-toggle');
+      rest.classList.toggle('open');
+      toggle.classList.toggle('open');
+      if (rest.classList.contains('open')) {
+        toggle.querySelector('span').textContent = 'Collapse letter';
+      } else {
+        toggle.querySelector('span').textContent = 'Keep reading Chris\'s letter';
+      }
+    }
+
     // Scroll-triggered fade-in animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
