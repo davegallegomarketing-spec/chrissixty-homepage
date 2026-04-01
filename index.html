@@ -116,10 +116,14 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 56px;
-      padding: 80px 60px;
+      padding: 72px 60px 64px;
       max-width: 1200px;
       margin: 0 auto;
       align-items: center;
+    }
+    .hero-wrapper {
+      background: linear-gradient(180deg, #f5f0eb 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--faint);
     }
     .hero-badge {
       display: inline-block;
@@ -131,60 +135,60 @@
       text-transform: uppercase;
       padding: 8px 16px;
       border-radius: 40px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     .hero h1 {
       font-family: var(--serif);
-      font-size: 52px;
-      line-height: 1.1;
+      font-size: 48px;
+      line-height: 1.12;
       font-weight: 400;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
       letter-spacing: -0.5px;
     }
     .hero h1 em { font-style: italic; }
+    .hero-hook {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--accent);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
     .hero-sub {
       color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 32px;
+      font-size: 16px;
+      margin-bottom: 28px;
       max-width: 480px;
       line-height: 1.65;
     }
-    .hero-cta-row {
+    .hero-testimonial {
       display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--faint);
     }
-    .btn-primary {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--white);
-      padding: 14px 32px;
-      border-radius: 6px;
+    .hero-testimonial .ht-quote {
       font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.2px;
-      transition: all 0.2s;
-    }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(184,67,47,0.2);
-    }
-    .btn-ghost {
       color: var(--muted);
-      font-size: 13px;
-      font-weight: 500;
-      transition: color 0.2s;
+      font-style: italic;
+      line-height: 1.5;
     }
-    .btn-ghost:hover { color: var(--ink); }
-
+    .hero-testimonial .ht-stars {
+      color: var(--warm);
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .hero-testimonial .ht-meta {
+      font-size: 11px;
+      color: var(--light);
+      margin-top: 4px;
+    }
     .hero-trust {
       display: flex;
       gap: 32px;
-      margin-top: 36px;
-      padding-top: 28px;
-      border-top: 1px solid var(--faint);
+      margin-top: 20px;
     }
     .trust-item {
       font-size: 13px;
@@ -1042,11 +1046,13 @@
   </nav>
 
   <!-- ============ HERO ============ -->
+  <div class="hero-wrapper">
   <section class="hero" id="coaching">
     <div class="fade-up">
-      <div class="hero-badge">Attraction Strategist</div>
-      <h1>Get your own personal <em>"Attraction Strategy"</em></h1>
-      <p class="hero-sub">A custom coaching plan from the only coach who specializes in flipping the dynamic — so she chases you, and stays.</p>
+      <div class="hero-badge">Coaching with Chris Sixty</div>
+      <h1>She's slipping away. <em>You can feel it.</em></h1>
+      <p class="hero-hook">Stop guessing. Get a personal strategy from the coach who's spent 20 years flipping the dynamic.</p>
+      <p class="hero-sub">Tell Chris your situation — he'll personally reach out to schedule your free strategy call. No pressure, no commitment.</p>
       <div class="inline-capture" data-capture="hero">
         <input type="email" placeholder="Enter your email" required>
         <button type="button" onclick="captureEmail(this)">Free Strategy Call</button>
@@ -1057,11 +1063,15 @@
         <div class="trust-item"><strong>1,000s</strong>of clients worldwide</div>
         <div class="trust-item"><strong>Free</strong>first strategy call</div>
       </div>
+      <div class="hero-testimonial">
+        <div>
+          <div class="ht-stars">★★★★★</div>
+          <p class="ht-quote">"I finally understand why every relationship followed the same pattern — and how to break it."</p>
+          <p class="ht-meta">— Coaching client</p>
+        </div>
+      </div>
     </div>
     <div class="hero-video fade-up fade-up-d2">
-      <!--
-        Chris's intro video — Vimeo embed
-      -->
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
         <iframe src="https://player.vimeo.com/video/1090903533?title=0&byline=0&portrait=0&sidedock=0&pip=0&vimeo_logo=0&share=0&like=0&watchlater=0&quality=auto&cc_button=1" 
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
@@ -1070,6 +1080,7 @@
       </div>
     </div>
   </section>
+  </div>
 
   <div class="sep"><div class="sep-dot"></div><div class="sep-dot"></div><div class="sep-dot"></div></div>
 
