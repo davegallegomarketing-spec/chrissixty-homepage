@@ -338,9 +338,16 @@
 
     /* ---- CHRIS'S LETTER ---- */
     .letter-section {
-      max-width: 720px;
+      max-width: 780px;
       margin: 0 auto;
       padding: 64px 60px;
+    }
+    .letter-inner {
+      background: var(--white);
+      border: 1px solid var(--faint);
+      border-radius: 14px;
+      padding: 48px 44px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.03);
     }
     .letter-salutation {
       font-family: var(--serif);
@@ -370,7 +377,7 @@
       margin: 36px 0;
     }
     .letter-stakes {
-      background: var(--white);
+      background: var(--bg);
       border: 1px solid var(--faint);
       border-radius: 10px;
       padding: 28px;
@@ -397,31 +404,49 @@
       margin: 0 4px;
     }
 
-    /* Mid-letter CTA — compact inline strip */
+    /* Mid-letter CTA — warm, purposeful action strip */
     .letter-mid-cta {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 16px 20px;
-      margin: 28px 0;
-      background: var(--white);
-      border: 1px solid var(--faint);
-      border-radius: 10px;
+      gap: 20px;
+      padding: 22px 24px;
+      margin: 32px 0;
+      background: linear-gradient(135deg, #fdf6f2, #faf3ed);
+      border: 1.5px solid rgba(184,67,47,0.15);
+      border-radius: 12px;
+      position: relative;
     }
-    .letter-mid-cta .cta-label {
-      font-size: 13px;
-      color: var(--muted);
-      white-space: nowrap;
+    .letter-mid-cta .cta-photo {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      border: 2px solid rgba(184,67,47,0.12);
+    }
+    .letter-mid-cta .cta-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .letter-mid-cta .cta-msg {
+      font-size: 14px;
       font-weight: 500;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+    .letter-mid-cta .cta-msg span {
+      color: var(--accent);
     }
     .letter-mid-cta .inline-capture {
-      flex: 1;
       margin: 0;
       max-width: none;
       padding: 4px;
-      border: none;
+      border: 1px solid var(--faint);
       box-shadow: none;
-      background: var(--bg);
+      background: var(--white);
       border-radius: 8px;
     }
     .letter-mid-cta .inline-capture input {
@@ -429,19 +454,17 @@
       font-size: 14px;
     }
     .letter-mid-cta .inline-capture button {
-      padding: 10px 18px;
+      padding: 10px 20px;
       font-size: 13px;
-    }
-    .letter-mid-cta .cta-note {
-      display: none;
     }
     @media (max-width: 640px) {
       .letter-mid-cta {
         flex-direction: column;
         align-items: stretch;
-        gap: 10px;
+        gap: 12px;
+        text-align: center;
       }
-      .letter-mid-cta .cta-label { white-space: normal; text-align: center; }
+      .letter-mid-cta .cta-photo { margin: 0 auto; }
     }
 
     /* Expand/collapse for the rest of the letter */
@@ -483,7 +506,7 @@
 
     /* Key line highlight */
     .letter-key-line {
-      background: rgba(184,67,47,0.04);
+      background: var(--bg);
       border-radius: 6px;
       padding: 16px 20px;
       margin: 20px 0;
@@ -978,6 +1001,7 @@
       .section-title { font-size: 28px; }
 
       .letter-section { padding: 40px 20px; }
+      .letter-inner { padding: 32px 24px; }
       .letter-salutation { font-size: 24px; }
       .letter-pullquote { font-size: 18px; }
 
@@ -1078,6 +1102,7 @@
 
   <!-- ============ CHRIS'S LETTER — restructured for readability ============ -->
   <section class="letter-section" id="letter">
+    <div class="letter-inner">
     <div class="letter-salutation">"Dear Friend —"</div>
 
     <p>Let me be crystal clear about what I do.</p>
@@ -1094,12 +1119,15 @@
       No one on this planet is better at helping a man get the woman he's crazy about — and flipping the dynamic so she feels like he's the prize. That's the world's greatest magic trick.
     </div>
 
-    <!-- MID-LETTER CTA — compact strip breaker -->
+    <!-- MID-LETTER CTA -->
     <div class="letter-mid-cta">
-      <span class="cta-label">Ready to talk?</span>
-      <div class="inline-capture" data-capture="mid-letter-top">
-        <input type="email" placeholder="Your email" required>
-        <button type="button" onclick="captureEmail(this)">Get Started</button>
+      <img class="cta-photo" src="https://res.cloudinary.com/df8ibmjdu/image/upload/v1774593350/Screenshot_2026-03-15_014758_ejgvja.png" alt="Chris Sixty">
+      <div class="cta-right">
+        <div class="cta-msg"><span>Ready now?</span> Get your free strategy call with Chris.</div>
+        <div class="inline-capture" data-capture="mid-letter-top">
+          <input type="email" placeholder="Your email" required>
+          <button type="button" onclick="captureEmail(this)">Get Started</button>
+        </div>
       </div>
     </div>
 
@@ -1143,14 +1171,18 @@
 
     <p>No pressure. Just a real conversation about where you are, what's not working, and how to flip the dynamic — for good. This isn't therapy. This isn't guesswork. This is the most important investment you'll ever make.</p>
 
-    <!-- END-OF-LETTER CTA — compact strip -->
+    <!-- END-OF-LETTER CTA -->
     <div class="letter-mid-cta">
-      <span class="cta-label">Let's talk →</span>
-      <div class="inline-capture" data-capture="mid-letter">
-        <input type="email" placeholder="Your email" required>
-        <button type="button" onclick="captureEmail(this)">Get My Free Call</button>
+      <img class="cta-photo" src="https://res.cloudinary.com/df8ibmjdu/image/upload/v1774593350/Screenshot_2026-03-15_014758_ejgvja.png" alt="Chris Sixty">
+      <div class="cta-right">
+        <div class="cta-msg"><span>Let's talk.</span> Enter your email and Chris will reach out personally.</div>
+        <div class="inline-capture" data-capture="mid-letter">
+          <input type="email" placeholder="Your email" required>
+          <button type="button" onclick="captureEmail(this)">Get My Free Call</button>
+        </div>
       </div>
     </div>
+    </div><!-- end letter-inner -->
 
   </section>
 
