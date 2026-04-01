@@ -397,33 +397,51 @@
       margin: 0 4px;
     }
 
-    /* Mid-letter CTA */
+    /* Mid-letter CTA — compact inline strip */
     .letter-mid-cta {
-      text-align: center;
-      padding: 28px 0;
-      margin: 12px 0;
-      border-top: 1px solid var(--faint);
-      border-bottom: 1px solid var(--faint);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      margin: 28px 0;
+      background: var(--white);
+      border: 1px solid var(--faint);
+      border-radius: 10px;
     }
-    .letter-mid-cta p {
-      font-size: 13px !important;
-      color: var(--light) !important;
-      margin-bottom: 12px !important;
-      font-weight: 400 !important;
-    }
-    .letter-mid-cta a {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--white);
-      padding: 12px 28px;
-      border-radius: 6px;
+    .letter-mid-cta .cta-label {
       font-size: 13px;
-      font-weight: 600;
-      transition: all 0.2s;
+      color: var(--muted);
+      white-space: nowrap;
+      font-weight: 500;
     }
-    .letter-mid-cta a:hover {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
+    .letter-mid-cta .inline-capture {
+      flex: 1;
+      margin: 0;
+      max-width: none;
+      padding: 4px;
+      border: none;
+      box-shadow: none;
+      background: var(--bg);
+      border-radius: 8px;
+    }
+    .letter-mid-cta .inline-capture input {
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+    .letter-mid-cta .inline-capture button {
+      padding: 10px 18px;
+      font-size: 13px;
+    }
+    .letter-mid-cta .cta-note {
+      display: none;
+    }
+    @media (max-width: 640px) {
+      .letter-mid-cta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .letter-mid-cta .cta-label { white-space: normal; text-align: center; }
     }
 
     /* Expand/collapse for the rest of the letter */
@@ -1076,14 +1094,13 @@
       No one on this planet is better at helping a man get the woman he's crazy about — and flipping the dynamic so she feels like he's the prize. That's the world's greatest magic trick.
     </div>
 
-    <!-- MID-LETTER CTA — catches people who are already sold -->
+    <!-- MID-LETTER CTA — compact strip breaker -->
     <div class="letter-mid-cta">
-      <p>Ready to talk? Enter your email and Chris will reach out.</p>
-      <div class="inline-capture centered" data-capture="mid-letter-top">
+      <span class="cta-label">Ready to talk?</span>
+      <div class="inline-capture" data-capture="mid-letter-top">
         <input type="email" placeholder="Your email" required>
         <button type="button" onclick="captureEmail(this)">Get Started</button>
       </div>
-      <p style="font-size:11px;color:var(--light);text-align:center;margin-top:-8px">No spam. Chris will personally reach out to you.</p>
     </div>
 
     <div class="letter-break"><div class="lb-dot"></div><div class="lb-dot"></div><div class="lb-dot"></div></div>
@@ -1126,13 +1143,13 @@
 
     <p>No pressure. Just a real conversation about where you are, what's not working, and how to flip the dynamic — for good. This isn't therapy. This isn't guesswork. This is the most important investment you'll ever make.</p>
 
-    <!-- END-OF-LETTER CTA -->
+    <!-- END-OF-LETTER CTA — compact strip -->
     <div class="letter-mid-cta">
-      <div class="inline-capture centered" data-capture="mid-letter">
+      <span class="cta-label">Let's talk →</span>
+      <div class="inline-capture" data-capture="mid-letter">
         <input type="email" placeholder="Your email" required>
         <button type="button" onclick="captureEmail(this)">Get My Free Call</button>
       </div>
-      <p style="font-size:11px;color:var(--light);text-align:center;margin-top:-8px">No spam. Chris will personally reach out to you.</p>
     </div>
 
   </section>
