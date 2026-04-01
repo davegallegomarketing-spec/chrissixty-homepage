@@ -464,15 +464,6 @@
       padding: 10px 20px;
       font-size: 13px;
     }
-    @media (max-width: 640px) {
-      .letter-mid-cta {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-        text-align: center;
-      }
-      .letter-mid-cta .cta-photo { margin: 0 auto; }
-    }
 
     /* Expand/collapse for the rest of the letter */
     .letter-expand-toggle {
@@ -893,15 +884,6 @@
       font-size: 14px;
     }
 
-    @media (max-width: 768px) {
-      .inline-capture { flex-direction: column; }
-      .inline-capture button { width: 100%; }
-      .form-email-row { flex-direction: column; }
-      .form-email-row button { width: 100%; }
-      .step2-modal { padding: 28px 20px; }
-      .form-row { grid-template-columns: 1fr; }
-    }
-
     /* ---- CROSS-SELL ---- */
     .cross-section {
       padding: 56px 60px;
@@ -989,31 +971,52 @@
     }
     .footer-links a:hover { color: var(--muted); }
 
-    /* ---- RESPONSIVE ---- */
+    /* ---- RESPONSIVE — TABLET (768px) ---- */
     @media (max-width: 768px) {
       .nav { padding: 14px 20px; }
+      .nav-logo { font-size: 22px; }
       .nav-right a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 10px 18px; font-size: 13px !important; }
 
       .hero {
         grid-template-columns: 1fr;
         padding: 40px 20px;
         gap: 32px;
       }
-      .hero h1 { font-size: 32px; }
+      .hero h1 { font-size: 34px; }
+      .hero-hook { font-size: 17px; }
       .hero-sub { font-size: 15px; }
-      .hero-trust { gap: 16px; }
+      .hero-trust { gap: 16px; flex-wrap: wrap; }
+      .hero-testimonial { margin-top: 20px; padding-top: 16px; }
+
+      .inline-capture { flex-direction: column; max-width: 100%; }
+      .inline-capture button { width: 100%; }
 
       .spec-section { padding: 40px 20px; }
       .spec-grid { grid-template-columns: 1fr; }
       .section-title { font-size: 28px; }
 
-      .letter-section { padding: 40px 20px; }
-      .letter-inner { padding: 32px 24px; }
+      .letter-section { padding: 40px 16px; }
+      .letter-inner { padding: 28px 20px; }
       .letter-salutation { font-size: 24px; }
-      .letter-pullquote { font-size: 18px; }
+      .letter-pullquote { font-size: 18px; padding-left: 16px; }
+      .letter-stakes { padding: 20px; }
+      .letter-key-line { padding: 14px 16px; }
 
-      .form-section { padding: 40px 20px; }
+      .letter-mid-cta { 
+        flex-direction: column; 
+        align-items: stretch; 
+        gap: 12px; 
+        padding: 18px; 
+        text-align: center; 
+      }
+      .letter-mid-cta .cta-photo { margin: 0 auto; }
+      .letter-mid-cta .inline-capture { max-width: 100%; }
+
+      .form-email-row { flex-direction: column; }
+      .form-email-row button { width: 100%; }
       .form-row { grid-template-columns: 1fr; }
+      .step2-modal { padding: 28px 20px; }
 
       .cross-section {
         padding: 32px 20px;
@@ -1021,13 +1024,57 @@
       }
 
       footer { padding: 28px 20px; }
+      .footer-links a { margin: 0 6px; font-size: 12px; }
     }
 
+    /* ---- RESPONSIVE — SMALL PHONE (480px) ---- */
     @media (max-width: 480px) {
       .hero h1 { font-size: 28px; }
-      .hero-trust { flex-direction: column; gap: 12px; }
+      .hero-hook { font-size: 16px; }
+      .hero-trust { flex-direction: column; gap: 8px; }
       .trust-item { display: flex; gap: 6px; align-items: baseline; }
-      .trust-item strong { display: inline; }
+      .trust-item strong { display: inline; font-size: 16px; }
+      .hero-testimonial .ht-quote { font-size: 13px; }
+
+      .section-title { font-size: 24px; }
+      .spec-card { padding: 22px; }
+      .spec-card h3 { font-size: 18px; }
+
+      .letter-inner { padding: 24px 18px; }
+      .letter-section p { font-size: 15px; }
+      .letter-pullquote { font-size: 17px; }
+      .letter-mid-cta { padding: 16px; }
+      .letter-mid-cta .cta-msg { font-size: 13px; }
+    }
+
+    /* ---- RESPONSIVE — LARGE SCREENS (1400px+) ---- */
+    @media (min-width: 1400px) {
+      .hero { max-width: 1320px; padding: 88px 80px 72px; gap: 64px; }
+      .hero h1 { font-size: 56px; }
+      .hero-hook { font-size: 22px; }
+      .hero-sub { font-size: 18px; }
+
+      .spec-section { max-width: 1200px; }
+      .section-title { font-size: 44px; }
+      .spec-card { padding: 36px; }
+      .spec-card h3 { font-size: 24px; }
+      .spec-card p { font-size: 16px; }
+
+      .letter-inner { max-width: 780px; padding: 56px 52px; }
+      .letter-section p { font-size: 18px; }
+      .letter-salutation { font-size: 36px; }
+      .letter-pullquote { font-size: 26px; }
+
+      .cross-section { max-width: 1200px; }
+    }
+
+    /* ---- RESPONSIVE — ULTRA WIDE (1800px+) ---- */
+    @media (min-width: 1800px) {
+      .hero { max-width: 1440px; }
+      .hero h1 { font-size: 60px; }
+      .spec-section { max-width: 1320px; }
+      .letter-inner { max-width: 840px; }
+      .cross-section { max-width: 1320px; }
     }
   </style>
 </head>
