@@ -123,7 +123,38 @@
     }
     .hero-wrapper {
       background: linear-gradient(180deg, #f5f0eb 0%, var(--bg) 100%);
-      border-bottom: 1px solid var(--faint);
+      border-bottom: none;
+      position: relative;
+      padding-bottom: 0;
+    }
+    /* Full-width credential band */
+    .hero-band {
+      background: var(--ink);
+      color: var(--white);
+      padding: 28px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-band .band-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+    }
+    .hero-band .band-item strong {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .hero-band .band-divider {
+      width: 1px;
+      height: 24px;
+      background: rgba(255,255,255,0.15);
     }
     .hero-badge {
       display: inline-block;
@@ -210,8 +241,8 @@
       border-radius: 12px;
       overflow: hidden;
       position: relative;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.04);
-      margin-top: 48px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+      margin-top: 20px;
     }
     .hero-video .video-wrapper {
       position: relative;
@@ -987,8 +1018,11 @@
       .hero h1 { font-size: 34px; }
       .hero-hook { font-size: 17px; }
       .hero-sub { font-size: 15px; }
-      .hero-trust { gap: 16px; flex-wrap: wrap; }
       .hero-testimonial { margin-top: 20px; padding-top: 16px; }
+      .hero-band { padding: 20px; gap: 16px; }
+      .hero-band .band-divider { display: none; }
+      .hero-band .band-item { font-size: 12px; }
+      .hero-band .band-item strong { font-size: 15px; }
 
       .inline-capture { flex-direction: column; max-width: 100%; }
       .inline-capture button { width: 100%; }
@@ -1032,10 +1066,10 @@
     @media (max-width: 480px) {
       .hero h1 { font-size: 28px; }
       .hero-hook { font-size: 16px; }
-      .hero-trust { flex-direction: column; gap: 8px; }
-      .trust-item { display: flex; gap: 6px; align-items: baseline; }
-      .trust-item strong { display: inline; font-size: 16px; }
       .hero-testimonial .ht-quote { font-size: 13px; }
+      .hero-band { gap: 12px; padding: 16px; }
+      .hero-band .band-item { font-size: 11px; }
+      .hero-band .band-item strong { font-size: 14px; }
 
       .section-title { font-size: 24px; }
       .spec-card { padding: 22px; }
@@ -1106,11 +1140,6 @@
         <button type="button" onclick="captureEmail(this)">Free Strategy Call</button>
       </div>
       <p style="font-size:11px;color:var(--light);margin-top:-12px">No spam. Chris will personally reach out to you.</p>
-      <div class="hero-trust">
-        <div class="trust-item"><strong>20+</strong>Years coaching</div>
-        <div class="trust-item"><strong>1,000s</strong>of clients worldwide</div>
-        <div class="trust-item"><strong>Free</strong>first strategy call</div>
-      </div>
       <div class="hero-testimonial">
         <div>
           <div class="ht-stars">★★★★★</div>
@@ -1128,6 +1157,18 @@
       </div>
     </div>
   </section>
+  <!-- Credential band -->
+  <div class="hero-band">
+    <div class="band-item"><strong>20+</strong> Years Coaching</div>
+    <div class="band-divider"></div>
+    <div class="band-item"><strong>1,000s</strong> of Clients Worldwide</div>
+    <div class="band-divider"></div>
+    <div class="band-item"><strong>Free</strong> First Strategy Call</div>
+    <div class="band-divider"></div>
+    <div class="band-item">Author: "You Never Had Her"</div>
+    <div class="band-divider"></div>
+    <div class="band-item">Founder: The Dynamic Ones</div>
+  </div>
   </div>
 
   <div class="sep"><div class="sep-dot"></div><div class="sep-dot"></div><div class="sep-dot"></div></div>
